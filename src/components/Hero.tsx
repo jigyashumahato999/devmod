@@ -7,8 +7,9 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-primary">Premium</span>{" "}
-            <span className="text-secondary">Minecraft</span>
+            <span className="bg-gradient-to-r from-primary via-orange-400 to-secondary bg-clip-text text-transparent">
+              Premium Minecraft
+            </span>
             <br />
             <span className="text-foreground">Server Hosting</span>
           </h1>
