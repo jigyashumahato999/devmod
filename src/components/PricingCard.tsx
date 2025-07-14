@@ -47,7 +47,7 @@ const PricingCard = ({
     <div className={`relative bg-gradient-card rounded-xl p-8 border border-border backdrop-blur-sm transition-all duration-300 transform hover:scale-105 ${getColorClasses(color)} ${isPopular ? 'ring-2 ring-primary/50' : ''}`}>
       {isPopular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span className="bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold">
+          <span className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-primary/20">
             Most Popular
           </span>
         </div>
