@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gaming dark theme color palette */
+    --background: 217 23% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 217 23% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 217 23% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Minecraft-themed rainbow colors */
+    --primary: 45 96% 64%;
+    --primary-foreground: 217 23% 8%;
+    --primary-glow: 45 96% 75%;
+
+    /* Minecraft green accent */
+    --secondary: 120 100% 40%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 20% 15%;
+    --muted-foreground: 217 10% 65%;
+
+    --accent: 120 100% 40%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 20% 20%;
+    --input: 217 20% 15%;
+    --ring: 45 96% 64%;
+
+    --radius: 0.75rem;
+
+    /* Minecraft rainbow gradient effects */
+    --gradient-rainbow: linear-gradient(90deg, 
+      hsl(340 100% 70%), 
+      hsl(280 100% 70%), 
+      hsl(240 100% 70%), 
+      hsl(200 100% 70%), 
+      hsl(160 100% 70%), 
+      hsl(120 100% 70%), 
+      hsl(60 100% 70%), 
+      hsl(20 100% 70%)
+    );
+    --gradient-hero: linear-gradient(135deg, hsl(217 23% 8%) 0%, hsl(217 25% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(217 23% 10%) 0%, hsl(217 25% 12%) 100%);
+    
+    /* Minecraft glow effects */
+    --glow-rainbow: 0 0 30px hsla(340, 100%, 70%, 0.4);
+    --glow-secondary: 0 0 30px hsla(120, 100%, 40%, 0.3);
+    
+    /* Enhanced animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-rainbow {
+    background: var(--gradient-rainbow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: rainbow-shift 3s ease-in-out infinite;
+  }
+  
+  .text-glow-rainbow {
+    filter: drop-shadow(var(--glow-rainbow));
+  }
+  
+  @keyframes rainbow-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
